@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class Structure - X AKL 1 NEKA</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body class="home-page">
+
+  <!-- NAVBAR -->
+  <nav class="navbar-home">
+    <div class="logo">
+      <img src="logoneka.png" alt="Logo" class="logo-img">
+      X AKL 1 NEKA
+    </div>
+    <ul>
+      <li><a href="index.html"><i class="ph ph-house"></i> Home</a></li>
+      <li><a href="Achievement.html"><i class="ph ph-trophy"></i> Achievement</a></li>
+      <li><a href="Gallery.html"><i class="ph ph-images"></i> Gallery</a></li>
+      <li><a href="#" id="members-link"><i class="ph ph-users-three"></i> Our Members</a></li>
+      <li><a href="Quotes.html"><i class="ph ph-chat-circle-text"></i> Quotes</a></li>
+      <li><a class="active" href="Structure.html"><i class="ph ph-squares-four"></i> Structure</a></li>
+    </ul>
+  </nav>
+
+  <!-- STRUCTURE SECTION -->
+  <section class="structure-section">
+    <h1>Struktur Kelas</h1>
+    <p>Di bawah ini adalah susunan struktur organisasi kelas X AKL 1 NEKA</p>
+
+    <div class="structure-grid">
+
+      <!-- Ketua Kelas -->
+      <div class="card">
+        <img src="usericon.png" alt="Ketua Kelas" class="card-img">
+        <h3>Ketua Kelas</h3>
+        <p>Ahmad Rofi'ul Anwar</p>
+      </div>
+
+      <!-- Wakil Ketua -->
+      <div class="card">
+        <img src="usericon.png" alt="Wakil Ketua" class="card-img">
+        <h3>Wakil Ketua</h3>
+        <p>Abdul Fatah Albarozi</p>
+      </div>
+
+      <!-- Sekretaris -->
+      <div class="card">
+        <img src="usericon.png" alt="Sekretaris" class="card-img">
+        <h3>Sekretaris 1</h3>
+        <p>Selvie Apriyanti</p>
+      </div>
+
+      <!-- Sekretaris 2 -->
+      <div class="card">
+        <img src="usericon.png" alt="Sekretaris 2" class="card-img">
+        <h3>Sekretaris 2</h3>
+        <p>Elena</p>
+      </div>
+
+      <!-- Bendahara -->
+      <div class="card">
+        <img src="usericon.png" alt="Bendahara" class="card-img">
+        <h3>Bendahara 1</h3>
+        <p>Anggita Restiana</p>
+      </div>
+
+      <!-- Bendahara 2 -->
+      <div class="card">
+        <img src="usericon.png" alt="Bendahara 2" class="card-img">
+        <h3>Bendahara 2</h3>
+        <p>Mayraypasysa Azzani Febiana</p>
+
+      
+    </div>
+  </section>
+
+  <!-- CREDIT -->
+  <div class="credit-bar">
+    <p>Created with ❤️ by <strong>Tim Web X AKL 1 NEKA</strong></p>
+  </div>
+
+  <!-- POPUP MEMBERS UNDER DEV -->
+  <div class="popup-overlay" id="popup">
+    <div class="popup-box">
+      <h2>🚧 Under Development</h2>
+      <p>Halaman ini sedang dalam tahap pengembangan.<br>
+         Nantikan update selanjutnya ya!</p>
+      <button id="close-popup">Tutup</button>
+    </div>
+  </div>
+
+<script>
+  const popup = document.getElementById('popup');
+  const membersLink = document.getElementById('members-link');
+  const closePopup = document.getElementById('close-popup');
+
+  membersLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    popup.style.display = 'flex';
+  });
+
+  closePopup.addEventListener('click', () => {
+    popup.style.display = 'none';
+  });
+
+  // Tutup popup kalau klik luar
+  window.addEventListener('click', (e) => {
+    if (e.target === popup) {
+      popup.style.display = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>

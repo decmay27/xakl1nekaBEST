@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Achievement - X AKL 1 NEKA</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">
+      <img src="logoneka.png" alt="Logo" class="logo-img">
+      X AKL 1 NEKA
+    </div>
+    <ul>
+      <li><a href="index.html"><i class="ph ph-house"></i> Home</a></li>
+      <li><a href="Achievement.html" class="active"><i class="ph ph-trophy"></i> Achievement</a></li>
+      <li><a href="Gallery.html"><i class="ph ph-images"></i> Gallery</a></li>
+      <li><a href="#" id="members-link"><i class="ph ph-users-three"></i> Our Members</a></li>
+      <li><a href="Quotes.html"><i class="ph ph-quotes"></i> Quotes</a></li>
+      <li><a href="Structure.html" class="active"><i class="ph ph-squares-four"></i> Structure</a></li>
+    </ul>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="page-header">
+    <h1>Our Achievements</h1>
+    <p>Pencapaian terbaik dari X AKL 1 NEKA</p>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="achievements">
+
+    <!-- Prestasi 1 -->
+    <div class="achievement-card fade-in">
+      <img src="sertifikatbkc.png" alt="Kelas Terbaik LDDK BKC">
+      <div class="achievement-text">
+        <h2>Kelas Terbaik LDDK BKC</h2>
+        <p><strong>Tingkat:</strong> Sekolah</p>
+        <p><strong>Tahun:</strong> 2025</p>
+        <p><strong>Deskripsi:</strong> Berhasil meraih predikat kelas terbaik saat kegiatan LDDK BKC.</p>
+      </div>
+    </div>
+
+    <!-- Prestasi 2 (kosong / none) -->
+    <div class="achievement-card fade-in none-card">
+      <img src="none.jpg" alt="Belum Ada Prestasi">
+      <div class="achievement-text">
+        <h2>None</h2>
+        <p><strong>Tingkat:</strong> None</p>
+        <p><strong>Tahun:</strong> None</p>
+        <p><strong>Deskripsi:</strong> Belum ada prestasi pada bagian ini.</p>
+      </div>
+    </div>
+
+    <!-- Prestasi 3 (kosong / none) -->
+    <div class="achievement-card fade-in none-card">
+      <img src="none.jpg" alt="Belum Ada Prestasi">
+      <div class="achievement-text">
+        <h2>None</h2>
+        <p><strong>Tingkat:</strong> None</p>
+        <p><strong>Tahun:</strong> None</p>
+        <p><strong>Deskripsi:</strong> Belum ada prestasi pada bagian ini.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <marquee>@X AKL 1 NEKA'S WEBSITE</marquee>
+  </footer>
+
+  <!-- SCRIPT ANIMASI -->
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    window.addEventListener('scroll', () => {
+      faders.forEach(fade => {
+        const rect = fade.getBoundingClientRect().top;
+        if (rect < window.innerHeight - 100) {
+          fade.classList.add('visible');
+        }
+      });
+    });
+  </script>
+
+<!-- POPUP NOTIF -->
+<div class="popup-overlay" id="popup">
+  <div class="popup-box">
+    <h2>🚧 Under Development</h2>
+    <p>Halaman ini sedang dalam tahap pengembangan.<br>
+       Nantikan update selanjutnya ya!</p>
+    <button id="close-popup">Tutup</button>
+  </div>
+</div>
+
+<script>
+  const popup = document.getElementById('popup');
+  const membersLink = document.getElementById('members-link');
+  const closePopup = document.getElementById('close-popup');
+
+  membersLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    popup.style.display = 'flex';
+  });
+
+  closePopup.addEventListener('click', () => {
+    popup.style.display = 'none';
+  });
+
+  // Tutup popup kalau klik di luar kotak
+  window.addEventListener('click', (e) => {
+    if (e.target === popup) {
+      popup.style.display = 'none';
+    }
+  });
+</script>
+</body>
+</html>

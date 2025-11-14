@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery - X AKL 1 NEKA</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">
+      <img src="logoneka.png" alt="Logo" class="logo-img">
+      X AKL 1 NEKA
+    </div>
+    <ul>
+      <li><a href="index.html"><i class="ph ph-house"></i> Home</a></li>
+      <li><a href="Achievement.html"><i class="ph ph-trophy"></i> Achievement</a></li>
+      <li><a href="Gallery.html" class="active"><i class="ph ph-images"></i> Gallery</a></li>
+      <li><a href="#" id="members-link"><i class="ph ph-users-three"></i> Our Members</a></li>
+      <li><a href="Quotes.html"><i class="ph ph-quotes"></i> Quotes</a></li>
+      <li><a href="Structure.html" class="active"><i class="ph ph-squares-four"></i> Structure</a></li>
+    </ul>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="page-header">
+    <h1>Gallery of X AKL 1 NEKA</h1>
+    <p>Kumpulan momen terbaik dari kelas kami 📸</p>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery">
+    <div class="photo fade-in">
+      <img src="lddk1.png" alt="Foto LDDK 1">
+      <p>LDDK TNI</p>
+    </div>
+
+    <div class="photo fade-in">
+      <img src="lddk2.png" alt="Foto LDDK 2">
+      <p>LDDK TNI</p>
+    </div>
+
+    <div class="photo fade-in">
+      <img src="sertifikatbkc.png" alt="Sertifikat BKC">
+      <p>Sertifikat Penghargaan</p>
+    </div>
+
+    <div class="photo fade-in">
+      <img src="bkc1.png" alt="Foto BKC">
+      <p>LDDK BKC</p>
+    </div>
+
+    <div class="photo fade-in">
+      <img src="fotbar1.png" alt="Foto Bersama">
+      <p>Fotbar</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <marquee>@X AKL 1 NEKA'S WEBSITE</marquee>
+  </footer>
+
+  <!-- SCROLL FADE-IN SCRIPT -->
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    window.addEventListener('scroll', () => {
+      faders.forEach(fade => {
+        const rect = fade.getBoundingClientRect().top;
+        if (rect < window.innerHeight - 100) {
+          fade.classList.add('visible');
+        }
+      });
+    });
+  </script>
+
+<!-- POPUP NOTIF -->
+<div class="popup-overlay" id="popup">
+  <div class="popup-box">
+    <h2>🚧 Under Development</h2>
+    <p>Halaman ini sedang dalam tahap pengembangan.<br>
+       Nantikan update selanjutnya ya!</p>
+    <button id="close-popup">Tutup</button>
+  </div>
+</div>
+
+<script>
+  const popup = document.getElementById('popup');
+  const membersLink = document.getElementById('members-link');
+  const closePopup = document.getElementById('close-popup');
+
+  membersLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    popup.style.display = 'flex';
+  });
+
+  closePopup.addEventListener('click', () => {
+    popup.style.display = 'none';
+  });
+
+  // Tutup popup kalau klik di luar kotak
+  window.addEventListener('click', (e) => {
+    if (e.target === popup) {
+      popup.style.display = 'none';
+    }
+  });
+</script>
+</body>
+</html>

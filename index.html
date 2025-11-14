@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>X AKL 1 NEKA</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="home-page">
+  <!-- NAVBAR -->
+  <nav class="navbar-home">
+    <div class="logo">
+      <img src="logoneka.png" alt="Logo" class="logo-img">
+      X AKL 1 NEKA
+    </div>
+    <ul>
+      <li><a href="index.html" class="active"><i class="ph ph-house"></i> Home</a></li>
+      <li><a href="Achievement.html"><i class="ph ph-trophy"></i> Achievement</a></li>
+      <li><a href="Gallery.html"><i class="ph ph-images"></i> Gallery</a></li>
+      <li><a href="#" id="members-link"><i class="ph ph-users-three"></i> Our Members</a></li>
+      <li><a href="Structure.html" class="active"><i class="ph ph-squares-four"></i> Structure</a></li>
+</a></li>
+
+      <li><a href="Quotes.html"><i class="ph ph-chat-circle-text"></i> Quotes</a></li>
+    </ul>
+  </nav>
+
+<div class="monkey">
+  🐒
+</div>
+
+  <!-- HERO -->
+  <section class="hero-home">
+    <h1>Selamat Datang di <span>X AKL 1 NEKA</span></h1>
+    <p>Temukan pencapaian, galeri, dan anggota terbaik dari kelas kami!</p>
+    <a href="https://www.instagram.com/abhise.va0ne" target="_blank" class="btn-home">Kunjungi Instagram</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-home">
+    <marquee>@X AKL 1 NEKA'S WEBSITE</marquee>
+  </footer>
+
+  <!-- CREDIT BAR -->
+  <div class="credit-bar">
+    <p>Created with ❤️ by <strong>Tim Web X AKL 1 NEKA</strong></p>
+  </div>
+
+  <!-- POPUP NOTIF -->
+<div class="popup-overlay" id="popup">
+  <div class="popup-box">
+    <h2>🚧 Under Development</h2>
+    <p>Halaman ini sedang dalam tahap pengembangan.<br>
+       Nantikan update selanjutnya ya!</p>
+    <button id="close-popup">Tutup</button>
+  </div>
+</div>
+
+<script>
+  const popup = document.getElementById('popup');
+  const membersLink = document.getElementById('members-link');
+  const closePopup = document.getElementById('close-popup');
+
+  membersLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    popup.style.display = 'flex';
+  });
+
+  closePopup.addEventListener('click', () => {
+    popup.style.display = 'none';
+  });
+
+  // Tutup popup kalau klik di luar kotak
+  window.addEventListener('click', (e) => {
+    if (e.target === popup) {
+      popup.style.display = 'none';
+    }
+  });
+</script>
+</body>
+
+  

@@ -1,0 +1,122 @@
+/* === AUTH PAGE STYLE === */
+body.auth-body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(-45deg, #3a0ca3, #7209b7, #4361ee, #4cc9f0);
+  background-size: 400% 400%;
+  animation: bgMove 15s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+}
+
+/* Kotak login/register */
+.auth-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  width: 320px;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.3);
+  animation: fadeUp 1s ease;
+}
+
+.auth-container h2 {
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+/* Logo NEKA di atas form */
+.auth-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  animation: floatLogo 3s ease-in-out infinite;
+  box-shadow: 0 0 15px rgba(76, 201, 240, 0.4);
+}
+
+/* Animasi mengambang lembut */
+@keyframes floatLogo {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+
+.auth-container p {
+  margin-bottom: 25px;
+  color: #dbe4ff;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 10px;
+  background: #4cc9f0;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-form button:hover {
+  background: #3a0ca3;
+}
+
+.switch-text {
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+.switch-text a {
+  color: #4cc9f0;
+  text-decoration: none;
+  font-weight: 600;
+}
+.switch-text a:hover {
+  text-decoration: underline;
+}
+
+/* Animasi gradasi background */
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Animasi fade-up */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsif */
+@media (max-width: 480px) {
+  .auth-container {
+    width: 90%;
+    padding: 30px 20px;
+  }
+}
+
