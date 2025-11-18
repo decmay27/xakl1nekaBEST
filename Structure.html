@@ -11,6 +11,10 @@
 <body class="home-page">
 
   <!-- NAVBAR -->
+    <div class="walikelas-bar">
+  <p><i class="ph ph-chalkboard-teacher"></i> Wali Kelas: <strong>Erny Widyaswati</strong></p>
+    </div>
+
   <nav class="navbar-home">
     <div class="logo">
       <img src="logoneka.png" alt="Logo" class="logo-img">
@@ -83,37 +87,7 @@
     <p>Created with ❤️ by <strong>Tim Web X AKL 1 NEKA</strong></p>
   </div>
 
-  <!-- POPUP MEMBERS UNDER DEV -->
-  <div class="popup-overlay" id="popup">
-    <div class="popup-box">
-      <h2>🚧 Under Development</h2>
-      <p>Halaman ini sedang dalam tahap pengembangan.<br>
-         Nantikan update selanjutnya ya!</p>
-      <button id="close-popup">Tutup</button>
-    </div>
-  </div>
 
-<script>
-  const popup = document.getElementById('popup');
-  const membersLink = document.getElementById('members-link');
-  const closePopup = document.getElementById('close-popup');
-
-  membersLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    popup.style.display = 'flex';
-  });
-
-  closePopup.addEventListener('click', () => {
-    popup.style.display = 'none';
-  });
-
-  // Tutup popup kalau klik luar
-  window.addEventListener('click', (e) => {
-    if (e.target === popup) {
-      popup.style.display = 'none';
-    }
-  });
-</script>
 
 </body>
 </html>
