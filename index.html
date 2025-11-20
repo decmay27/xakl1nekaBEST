@@ -96,7 +96,7 @@ document.querySelectorAll("#popupStarRating span").forEach(star => {
       .forEach(s => s.classList.remove("active"));
     this.classList.add("active");
 
-    // Kirim ke Discord
+    // Send ke Discord
     fetch(webhookURL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
