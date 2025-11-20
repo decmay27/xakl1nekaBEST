@@ -45,6 +45,80 @@
     <p>Created with ❤️ by <strong>Tim Web X AKL 1 NEKA</strong></p>
   </div>
 
+  <!-- === POPUP RATING === -->
+<div class="popup-rating-overlay" id="ratingPopup">
+  <div class="popup-rating-box">
+    <h2>Kasih Rating Website Ini ⭐</h2>
+    <p>Kami ingin tahu pendapat kamu!</p>
+
+    <div class="popup-stars" id="popupStarRating">
+      <span data-value="1">★</span>
+      <span data-value="2">★</span>
+      <span data-value="3">★</span>
+      <span data-value="4">★</span>
+      <span data-value="5">★</span>
+    </div>
+
+    <button id="closePopup">Tutup</button>
+  </div>
+</div>
+
+<script>
+const webhookURL = "https://discord.com/api/webhooks/1440878851659141253/belasH1Qj6akF6t0QdqCjtGxxqAz6s29LLq2qpIADfbemXwLCAvl4rxmFFtXj15cW_lw";
+
+// Cek apakah user sudah rating
+let sudahRating = localStorage.getItem("popupRating");
+
+// Show popup jika belum pernah rating
+if (!sudahRating) {
+  document.getElementById("ratingPopup").style.display = "flex";
+}
+
+// Close button
+document.getElementById("closePopup").addEventListener("click", () => {
+  document.getElementById("ratingPopup").style.display = "none";
+});
+
+// Event rating
+document.querySelectorAll("#popupStarRating span").forEach(star => {
+  star.addEventListener("click", function () {
+
+    // Kalau sudah rating → stop
+    if (sudahRating) {
+      alert("Kamu sudah memberi rating sebelumnya!");
+      return;
+    }
+
+    const rating = this.getAttribute("data-value");
+
+    // highlight bintang
+    document.querySelectorAll("#popupStarRating span")
+      .forEach(s => s.classList.remove("active"));
+    this.classList.add("active");
+
+    // Kirim ke Discord
+    fetch(webhookURL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        content: `⭐ Popup Rating: **${rating}/5**`
+      })
+    });
+
+    alert(`Terima kasih! Kamu memberi rating ${rating} ⭐`);
+
+    // tandai user sudah rating
+    localStorage.setItem("popupRating", "true");
+
+    // Tutup popup
+    document.getElementById("ratingPopup").style.display = "none";
+  });
+});
+</script>
+
+
+
+
 </body>
 
   
