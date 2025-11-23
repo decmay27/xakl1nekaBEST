@@ -11,10 +11,10 @@
   <!-- NAVBAR -->
   <nav class="navbar-home">
     <div class="logo">
-      <img src="logoneka.png" alt="Logo" class="logo-img">
+      <img src="xakl1.png" alt="Logo" class="logo-img">
       X AKL 1 NEKA
 
-       <a href="https://github.com/decmay27" class="github-link" target="_blank">
+       <a href="https://github.com/decmay27/xakl1nekaBEST" class="github-link" target="_blank">
     <i class="ph ph-github-logo"></i>
   </a>
     </div>
@@ -78,37 +78,30 @@
 <script>
 const webhookURL = "https://discord.com/api/webhooks/1440878851659141253/belasH1Qj6akF6t0QdqCjtGxxqAz6s29LLq2qpIADfbemXwLCAvl4rxmFFtXj15cW_lw";
 
-// user rating
 let sudahRating = localStorage.getItem("popupRating");
 
-// Show popup jika belum pernah rating
+// show popup if not rated
 if (!sudahRating) {
   document.getElementById("ratingPopup").style.display = "flex";
 }
 
-// Close button
 document.getElementById("closePopup").addEventListener("click", () => {
   document.getElementById("ratingPopup").style.display = "none";
 });
 
-// Event rating
 document.querySelectorAll("#popupStarRating span").forEach(star => {
   star.addEventListener("click", function () {
 
-    // Kalau sudah rating → stop
-    if (sudahRating) {
-      alert("Kamu sudah memberi rating sebelumnya!");
-      return;
-    }
+    if (sudahRating) return;
 
     const rating = this.getAttribute("data-value");
 
-    // highlight bintang
+    // highlight
     document.querySelectorAll("#popupStarRating span")
       .forEach(s => s.classList.remove("active"));
     this.classList.add("active");
 
-    // Send ke Discord
+    // send webhook
     fetch(webhookURL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -117,12 +110,8 @@ document.querySelectorAll("#popupStarRating span").forEach(star => {
       })
     });
 
-    alert(`Terima kasih! Kamu memberi rating ${rating} ⭐`);
-
-    // tandai user sudah rating
+    // save & close popup
     localStorage.setItem("popupRating", "true");
-
-    // Tutup popup
     document.getElementById("ratingPopup").style.display = "none";
   });
 });
