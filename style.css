@@ -14,7 +14,7 @@ body {
 /* NAVBAR */
 nav {
   background: linear-gradient(135deg, #2b2d42, #3a0ca3);
-  color: white;
+  color: gold;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -38,6 +38,7 @@ nav .logo {
   height: 50px;
   border-radius: 50%;
   object-fit: cover;
+  color: golden;
 }
 
 nav ul {
