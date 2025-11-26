@@ -84,7 +84,7 @@ const webhookURL = "https://discord.com/api/webhooks/1440878851659141253/belasH1
 
 let sudahRating = localStorage.getItem("popupRating");
 
-// show popup if not rated
+// Buka popup kalau belum rating
 if (!sudahRating) {
   document.getElementById("ratingPopup").style.display = "flex";
 }
@@ -99,22 +99,31 @@ document.querySelectorAll("#popupStarRating span").forEach(star => {
     if (sudahRating) return;
 
     const rating = this.getAttribute("data-value");
+    const nama = document.getElementById("ratingNameInput").value.trim();
+
+    // Validasi nama
+    if (!nama) {
+      // kasih efek getar biar nggak pakai alert
+      const box = document.querySelector(".popup-box");
+      box.style.animation = "shake 0.3s";
+      setTimeout(() => box.style.animation = "", 300);
+      return;
+    }
 
     // highlight
     document.querySelectorAll("#popupStarRating span")
       .forEach(s => s.classList.remove("active"));
     this.classList.add("active");
 
-    // send webhook
+    // SEND WEBHOOK
     fetch(webhookURL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        content: `⭐ Rating logs: **${rating}/10**`
+        content: `📩 **Rating Baru Masuk!**\n👤 Nama: **${nama}**\n⭐ Rating: **${rating}/10**`
       })
     });
 
-    // save & close popup
     localStorage.setItem("popupRating", "true");
     document.getElementById("ratingPopup").style.display = "none";
   });
