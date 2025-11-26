@@ -57,11 +57,7 @@
   <div class="popup-rating-box">
     <h2>Kasih Rating Website Ini ⭐</h2>
    <p>Kami ingin tahu pendapat kamu!</p>
-
-   <label>Who's you?:</label>
-    <input type="text" id="ratingNameInput" placeholder="Enter your name..." required>
-
-
+    
     <div class="popup-stars" id="popupStarRating">
       <span data-value="1">★</span>
       <span data-value="2">★</span>
@@ -80,10 +76,11 @@
 </div>
 
 <script>
-const webhookURL = "https://discord.com/api/webhooks/1430391300154462390/QHOMxxTs4cPmB7EwNFUg0NtSCAUmSWxF1cANF_DyTkfPBlPTEI8PnbgEC0PcrAP8Ol-H";
+const webhookURL = "https://discord.com/api/webhooks/1440878851659141253/belasH1Qj6akF6t0QdqCjtGxxqAz6s29LLq2qpIADfbemXwLCAvl4rxmFFtXj15cW_lw";
 
 let sudahRating = localStorage.getItem("popupRating");
 
+// show popup if not rated
 if (!sudahRating) {
   document.getElementById("ratingPopup").style.display = "flex";
 }
@@ -98,27 +95,22 @@ document.querySelectorAll("#popupStarRating span").forEach(star => {
     if (sudahRating) return;
 
     const rating = this.getAttribute("data-value");
-    const nama = document.getElementById("ratingNameInput").value.trim();
 
-    if (!nama) {
-      const box = document.querySelector(".popup-box");
-      box.style.animation = "shake 0.3s";
-      setTimeout(() => (box.style.animation = ""), 300);
-      return;
-    }
-
+    // highlight
     document.querySelectorAll("#popupStarRating span")
       .forEach(s => s.classList.remove("active"));
     this.classList.add("active");
 
+    // send webhook
     fetch(webhookURL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        content: `📩 **Rating Baru!**\n👤 Nama: **${nama}**\n⭐ Rating: **${rating}/10**`
+        content: `⭐ Rating logs: **${rating}/10**`
       })
     });
 
+    // save & close popup
     localStorage.setItem("popupRating", "true");
     document.getElementById("ratingPopup").style.display = "none";
   });
